@@ -1,0 +1,34 @@
+﻿Icescrum:-
+This document takes you and your team through the first steps to start agile development with iceScrum. 
+iceScrum has grown around the Scrum pillars to help teams succeed in their project.
+
+
+Projects & Persons
+Scrum-it can manage multiple projects. The left-hand side of the screen shows a "List of Projects". Clicking on a project name inside the list view displays its details in the bottom right content area. To create a new project, click on the "Add" button, complete the form and press "Create Project". If you select a project, a "List of Persons" is displayed on the top right of the screen. Members can be added, edited or removed. Figure 1 shows a list of projects with a pre-selected project named "Scrum-it" and on the right-hand side two members belonging to the project.
+
+
+Sprints & User Stories
+After successfully creating a project, the next step is to set up sprints. A sprint is the main component of a development cycle. The purpose of each sprint is to deliver increments of potentially shippable functionality that adheres to a working definition of "done".
+Each project can have multiple sprints. To switch the screen from projects to sprints, click the arrow on the right of the project name. The resulting screen, including the views for sprint and user story
+This layout is the same than for the project screen and it provides identical operations/functions. The left-hand side of the screen shows a "List of Sprints". A new sprint can be added to a project by clicking "Add" and filling the form with the information for "slogan", "start" and "end date".
+By selecting a sprint, a "List of User Stories" is displayed. A user story is one or more sentences in everyday language that captures what the end-user wants to achieve. A single sprint can have many user stories that can be added, updated or removed.
+
+
+Scrum Board, Tasks and Burndown Chart
+Each sprint is represented with a Scrum board view. To go to this screen, press the arrow on the right of the sprint name .A new Scrum board screen appears with a Burndown Chart
+On the Scrum board, you can see and change the state of tasks of the current sprint within defined categories. It presents user stories on the left side of the screen, prioritized from top to bottom. Tasks are assigned to the categories "open", "in progress" or "done" representing the current status. A task is also part of a user story. User story notes have the same color as their associated task notes.
+A new task can be added to a user story by clicking on the plus icon next to it. Text can be added to describe the new task. You can drag and drop a task to change its status.
+The Burndown Chart is a graph that displays the remaining amount of work. It will be updated every time the status of a task changes and gives an overview of the sprint progress, with the remaining effort to finish it.
+
+
+Icescrum installation steps:-
+Setup / install steps are easy as:
+
+        1 – Download icescrum.jar file(it should be already started)
+        2 – Open a command line interface (e.g. Terminal on Mac or cmd on Windows) and go to your download folder (using cd on Mac or dir on Windows)
+        3 – Launch iceScrum from the command line using: java -Xmx512M -XX:MaxPermSize=256m -jar icescrum.jar
+        4 – Open your browser and go to suggested URL from the command line (usually: http://localhost:8080/icescrum/)
+        5 – Follow the setup wizard
+        6 – Enjoy iceScrum
+
+

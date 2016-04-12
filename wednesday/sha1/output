@@ -1,0 +1,17 @@
+#server.py
+
+husen@LittleTux:~/Desktop/sha1$ python2 server.py 
+Got a connection from ('127.0.0.1', 39094)
+Hola
+Got a connection from ('127.0.0.1', 39096)
+Hola
+
+#client.py
+
+Message successfully received and authenticated 333f9dc749f8b82593deb634458438bd93ac5205
+##Image 
+#client1.py
+
+Enter the requestHola
+Message successfully received and authenticated 333f9dc749f8b82593deb634458438bd93ac5205
+
