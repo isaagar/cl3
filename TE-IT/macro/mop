@@ -1,0 +1,70 @@
+INPUT:
+
+START 200
+READ A
+READ B
+MACRO
+ADD2 &x,&y,&z
+&l:LOAD &x
+ADD &y
+STORE &z
+SUB &x,&z
+MEND ADD2
+LOOP:MOVER A,B
+ADD2 A,B,C
+END 
+
+OUTPUT:
+
+Printing the IC File
+Buffer:&x
+Buffer:&y
+Buffer:&z
+
+MNT
+mname	sindex	eindex	no_of_arg
+ADD2	0	3	3
+
+MDT
+index  label	instruction	no_of_arg
+0	 &l	LOAD		 1
+1	 	ADD		 2
+2	 	STORE		 3
+3	 	SUB		 1 3
+4	 	MEND		
+
+FPPL
+name	pos
+&x	1
+&y	2
+&z	3
+
+APPL
+name	pos
+A	1
+B	2
+C	3
+
+IC File
+label	instr	no_of_arg
+	START	 200
+	READ	 A
+	READ	 B
+LOOP	MOVER	 A B
+	ADD2	 A B 
+	END	 
+
+
+
+Target File
+label	instr	no_of_arg
+	START	 200
+	READ	 A
+	READ	 B
+LOOP	MOVER	 A B
+&l	LOAD	 A
+	ADD	 B
+	STORE	 
+	SUB	 A 
+	END	 
+

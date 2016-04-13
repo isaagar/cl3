@@ -1,0 +1,104 @@
+
+----- MOT / OPTAB ----- 
+
+Index	Mnemonic	Class	Opcode	Chain	Length
+0	DS		DL	02	1	-
+1	START		AD	01	2	-
+2	END		AD	02	3	-
+3	EQU		AD	04	-1	-
+4	LTORG		AD	05	-1	-
+5	MUL		IS	03	6	1
+6	MOVER		IS	04	7	1
+7	MOVEM		IS	05	9	1
+8	PRINT		IS	10	-1	1
+9	ORIGIN		AD	03	-1	-
+10	READ		IS	09	-1	1
+11	STOP		IS	00	12	1
+12	ADD		IS	01	13	1
+13	SUB		IS	02	14	1
+14	COMP		IS	06	15	1
+15	BC		IS	07	16	1
+16	DIV		IS	08	17	1
+17	DC		DL	01	0	-
+
+
+--- REGISTER TABLE --- 
+
+Opcode	Register
+1	AREG
+2	BREG
+3	CREG
+4	DREG
+
+
+--- OPERATOR TABLE --- 
+
+Opcode	Operators
+1	LT
+2	LE
+3	GT
+4	GE
+5	EE
+6	ANY
+
+
+----Symbol Table----
+
+INDEX	SYMBOL	ADDRESS	LENGTH	RELOCATION STATUS
+
+ 01	L	201	0	R
+ 02	AGAIN	201	0	R
+ 03	A	208	5	R
+ 04	B	213	1	R
+
+-----IC File-----
+
+ADDRESS	MNEUMONIC_op	OPERATOR/REGISTER	OPERAND CODE
+
+0	AD,01			0		C,200	
+200	IS,04			1		S,01	
+201	IS,01			2		L,01	
+202	IS,01			3		L,02	
+0	AD,05			0		-	
+203	-			0		L,01	
+204	-			0		L,02	
+205	AD,03			0		S,02	
+205	IS,02			1		L,03	
+206	IS,01			2		S,03	
+0	AD,04			0		S,02	
+207	IS,00			0		-	
+208	DL,02			0		-	
+213	DL,02			0		-	
+0	AD,02			0		-	
+214	-			0		L,03	
+
+-----TARGET FILE-----
+
+ADDRESS	SIGN	OPCODE	OPERATOR	MEM_OP
+200	+	04	1		201
+201	+	01	2		203
+202	+	01	3		204
+203	+	00	0		5
+204	+	00	0		1
+205	+	02	1		214
+206	+	01	2		208
+207	+	00	0		0
+208	+	02	0		0
+213	+	02	0		0
+214	+	00	0		1
+
+
+----LITERAL FILE-----
+
+Index	Literal name	Address
+1	='5'		203
+2	='1'		204
+3	='1'		214
+
+
+-----POOL TABLE-----
+
+Literal no
+#1
+#3
+

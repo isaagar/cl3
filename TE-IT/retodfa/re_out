@@ -1,0 +1,52 @@
+	stuident@administrator-desktop:~/Desktop$ gcc re.c -o p
+	stuident@administrator-desktop:~/Desktop$ ./p
+
+	 Enter Postfix String : ab|*a.b.b.#.
+
+	 Press Any Key To Continue..... 
+	 STEP 1 : 
+
+	 NODE 	 FIRSTPOS     LASTPOS 
+
+	   a	    1 		 1 
+	   b	    2 		 2 
+	   |	    12 		 12 
+	   *	    12 		 12 
+	   a	    3 		 3 
+	   .	    123 		 3 
+	   b	    4 		 4 
+	   .	    123 		 4 
+	   b	    5 		 5 
+	   .	    123 		 5 
+	   #	    6 		 6 
+	   .	    123 		 6 
+	 Press Any Key To Continue..... 
+	 STEP 2 : 
+
+	 NODE NO:	LEAF NODE 	 FOLLOWPOS 
+
+	    1    	a 		 123
+
+	    2    	b 		 123
+
+	    3    	a 		 4
+
+	    4    	b 		 5
+
+	    5    	b 		 6
+
+	    6    	# 		 
+
+	 STEP 3 : 
+
+	 RESULTING DFA 
+
+
+		a	b	
+
+	P	Q	P	
+	Q	Q	R	
+	R	Q	S	
+	S	Q	P	
+	stuident@administrator-desktop:~/Desktop$ 
+

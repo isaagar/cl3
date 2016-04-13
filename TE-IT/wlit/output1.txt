@@ -1,0 +1,97 @@
+----- MOT / OPTAB ----- 
+
+Index	Mnemonic	Class	Opcode	Chain	Length
+0	DS		DL	02	1	-
+1	START		AD	01	2	-
+2	END		AD	02	3	-
+3	EQU		AD	04	-1	-
+4	LTORG		AD	05	-1	-
+5	MUL		IS	03	6	1
+6	MOVER		IS	04	7	1
+7	MOVEM		IS	05	9	1
+8	PRINT		IS	10	-1	1
+9	ORIGIN		AD	03	-1	-
+10	READ		IS	09	-1	1
+11	STOP		IS	00	12	1
+12	ADD		IS	01	13	1
+13	SUB		IS	02	14	1
+14	COMP		IS	06	15	1
+15	BC		IS	07	16	1
+16	DIV		IS	08	17	1
+17	DC		DL	01	0	-
+
+
+--- REGISTER TABLE --- 
+
+Opcode	Register
+1	AREG
+2	BREG
+3	CREG
+4	DREG
+
+
+--- OPERATOR TABLE --- 
+
+Opcode	Operators
+1	LT
+2	LE
+3	GT
+4	GE
+5	EE
+6	ANY
+
+Opcode is 2
+
+
+----Symbol Table----
+
+INDEX	SYMBOL	ADDRESS	LENGTH	RELOCATION STATUS
+
+ 01	N	112	1	R
+ 02	ONE	115	1	R
+ 03	TERM	116	1	R
+ 04	AGAIN	104	0	R
+ 05	LOOP	107	0	R
+ 06	RESULT	113	2	R
+
+-----IC File-----
+
+ADDRESS	MNEUMONIC_op	OPERATOR/REGISTER	OPERAND CODE
+
+0	AD,01			0		C,101	
+101	IS,09			0		S,01	
+102	IS,04			2		S,02	
+103	IS,05			2		S,03	
+104	IS,03			2		S,03	
+105	IS,04			3		S,03	
+106	IS,01			3		S,02	
+107	IS,05			3		S,03	
+108	IS,07			2		S,04	
+109	IS,05			2		S,06	
+110	IS,10			0		S,06	
+111	IS,00			0		-	
+112	DL,02			0		-	
+113	DL,02			0		-	
+115	DL,01			0		C,'1'	
+116	DL,02			0		-	
+0	AD,02			0		-	
+
+-----TARGET FILE-----
+
+ADDRESS	SIGN	OPCODE	OPERATOR	MEM_OP
+101	+	09	0		112
+102	+	04	2		115
+103	+	05	2		116
+104	+	03	2		116
+105	+	04	3		116
+106	+	01	3		115
+107	+	05	3		116
+108	+	07	2		104
+109	+	05	2		113
+110	+	10	0		113
+111	+	00	0		0
+112	+	02	0		0
+113	+	02	0		0
+115	+	01	0		0
+116	+	02	0		0
+

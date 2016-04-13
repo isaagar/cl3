@@ -1,0 +1,31 @@
+	student@IT_MULTI_182:~/Desktop$ lex lexn.l
+	student@IT_MULTI_182:~/Desktop$ yacc -d yaccn.y
+	student@IT_MULTI_182:~/Desktop$ gcc -c lex.yy.c y.tab.c
+	student@IT_MULTI_182:~/Desktop$ gcc -o abc lex.yy.o y.tab.o -ll
+	student@IT_MULTI_182:~/Desktop$ ./abc
+	2+3;
+
+
+		 Result = 5
+
+	student@IT_MULTI_182:~/Desktop$ ./abc
+	3-2;
+
+
+		 Result = 1
+
+	student@IT_MULTI_182:~/Desktop$ ./abc
+	4/0;
+
+
+		 Error !! Division by zero !!
+	student@IT_MULTI_182:~/Desktop$ ./abc
+	4*5;
+
+
+		 Result = 20
+
+	//lexn.l is the name of the lex file
+	//yaccn.y is the name of yacc file
+	//lex.yy.c y.tab.c is created by default
+	//abc is the name given by us to the output file

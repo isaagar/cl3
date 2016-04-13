@@ -1,0 +1,26 @@
+	student@IT_MULTI_181:~$ cd Desktop
+	student@IT_MULTI_181:~/Desktop$ lex if.l 
+	student@IT_MULTI_181:~/Desktop$ yacc -d if.y
+	student@IT_MULTI_181:~/Desktop$ gcc -c lex.yy.c y.tab.c
+	student@IT_MULTI_181:~/Desktop$ gcc -o abc lex.yy.o y.tab.o -ll
+	student@IT_MULTI_181:~/Desktop$ ./abc
+	Enter the expression : if(x+y) then(x+3);else(y+3);
+	t0 = x + y
+	t1 = not t0
+	if t1 goto L1
+	t2 = x + 3
+	goto L2
+	L1: 
+	t3 = y + 3
+	L2: 
+	student@IT_MULTI_181:~/Desktop$ ./abc
+	Enter the expression : if(x+3) then(x+y);else(y+3);
+	t0 = x + 3
+	t1 = not t0
+	if t1 goto L1
+	t2 = x + y
+	goto L2
+	L1: 
+	t3 = y + 3
+	L2: 
+
