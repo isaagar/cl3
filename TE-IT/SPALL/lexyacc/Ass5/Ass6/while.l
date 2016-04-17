@@ -8,4 +8,3 @@ while                return WHILE;
 \n                yyterminate();
 .                 return yytext[0];
 %%
-

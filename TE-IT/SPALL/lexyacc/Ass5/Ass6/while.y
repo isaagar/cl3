@@ -31,41 +31,41 @@ char temp[2]="t";
 int lnum=1;
 int start=1;
 main()
- {
- printf("Enter the expression : ");
- yyparse();
- }
+{
+printf("Enter the expression : ");
+yyparse();
+}
 
 push()
- {
-  strcpy(st[++top],yytext);
- }
+{
+strcpy(st[++top],yytext);
+}
 
 codegen()
- {
- strcpy(temp,"t");
- strcat(temp,i_);
-  printf("%s = %s %s %s\n",temp,st[top-2],st[top-1],st[top]);
-  top-=2;
- strcpy(st[top],temp);
- i_[0]++;
- }
+{
+strcpy(temp,"t");
+strcat(temp,i_);
+printf("%s = %s %s %s\n",temp,st[top-2],st[top-1],st[top]);
+top-=2;
+strcpy(st[top],temp);
+i_[0]++;
+}
 
 codegen_umin()
- {
- strcpy(temp,"t");
- strcat(temp,i_);
- printf("%s = -%s\n",temp,st[top]);
- top--;
- strcpy(st[top],temp);
- i_[0]++;
- }
+{
+strcpy(temp,"t");
+strcat(temp,i_);
+printf("%s = -%s\n",temp,st[top]);
+top--;
+strcpy(st[top],temp);
+i_[0]++;
+}
 
 codegen_assign()
- {
- printf("%s = %s\n",st[top-2],st[top]);
- top-=2;
- }
+{
+printf("%s = %s\n",st[top-2],st[top]);
+top-=2;
+}
 
 lab1()
 {
@@ -74,12 +74,12 @@ printf("L%d: \n",lnum++);
 
 lab2()
 {
- strcpy(temp,"t");
- strcat(temp,i_);
- printf("%s = not %s\n",temp,st[top]);
- printf("if %s goto L%d\n",temp,lnum);
- i_[0]++;
- }
+strcpy(temp,"t");
+strcat(temp,i_);
+printf("%s = not %s\n",temp,st[top]);
+printf("if %s goto L%d\n",temp,lnum);
+i_[0]++;
+}
 
 lab3()
 {

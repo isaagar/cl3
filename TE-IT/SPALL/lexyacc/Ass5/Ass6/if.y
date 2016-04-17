@@ -1,5 +1,4 @@
 %{
-
 #include<ctype.h>
 #include<stdio.h>
 #include<string.h>
@@ -40,57 +39,55 @@ V : ID {push();}
 %%
 
 main()
- {
- printf("Enter the expression : ");
- yyparse();
- }
+{
+printf("Enter the expression : ");
+yyparse();
+}
 
 push()
- {
-  strcpy(st[++top],yytext);
- }
+{
+strcpy(st[++top],yytext);
+}
 
 codegen()
- {
- strcpy(temp,"t");
- strcat(temp,i_);
-  printf("%s = %s %s %s\n",temp,st[top-2],st[top-1],st[top]);
-  top-=2;
- strcpy(st[top],temp);
- i_[0]++;
- }
+{
+strcpy(temp,"t");
+strcat(temp,i_);
+printf("%s = %s %s %s\n",temp,st[top-2],st[top-1],st[top]);
+top-=2;
+strcpy(st[top],temp);
+i_[0]++;
+}
 
 codegen_umin()
- {
- strcpy(temp,"t");
- strcat(temp,i_);
- printf("%s = -%s\n",temp,st[top]);
- top--;
- strcpy(st[top],temp);
- i_[0]++;
- }
+{
+strcpy(temp,"t");
+strcat(temp,i_);
+printf("%s = -%s\n",temp,st[top]);
+top--;
+strcpy(st[top],temp);
+i_[0]++;
+}
 
 codegen_assign()
- {
- printf("%s = %s\n",st[top-2],st[top]);
- top-=2;
- }
-
+{
+printf("%s = %s\n",st[top-2],st[top]);
+top-=2;
+}
 
 lab1()
 {
- lnum++;
- strcpy(temp,"t");
- strcat(temp,i_);
- printf("%s = not %s\n",temp,st[top]);
- printf("if %s goto L%d\n",temp,lnum);
- i_[0]++;
- label[++ltop]=lnum;
+lnum++;
+strcpy(temp,"t");
+strcat(temp,i_);
+printf("%s = not %s\n",temp,st[top]);
+printf("if %s goto L%d\n",temp,lnum);
+i_[0]++;
+label[++ltop]=lnum;
 }
 
 lab2()
 {
-
 int x;
 lnum++;
 x=label[ltop--];
@@ -106,12 +103,6 @@ y=label[ltop--];
 printf("L%d: \n",y);
 }
 
-
-void yyerror(char *s) {
-    fprintf(stderr, "%s\n", s);
-    
+void yyerror(char *s) 
+fprintf(stderr, "%s\n", s);    
 }
-
-
-
-
