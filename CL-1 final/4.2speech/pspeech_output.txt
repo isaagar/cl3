@@ -1,0 +1,24 @@
+
+ccompl10-20@ccompl10-20:~/Desktop$ lex part_speech.l
+ccompl10-20@ccompl10-20:~/Desktop$ cc lex.yy.c
+ccompl10-20@ccompl10-20:~/Desktop$ ./a.out
+dog is a noun 
+cats is a noun 
+fish is a noun 
+glove is a noun 
+foxglove is a noun 
+mouse is a noun  
+quick is an adjective 
+go is a verb
+runs is a verb
+blue is an adjective 
+white is an adjective  
+quickly is an adverb 
+easily is an adverb 
+openly is an adverb  
+slowly is an adverb
+over is a preposition 
+under is a preposition
+around is a preposition
+ccompl10-20@ccompl10-20:~/Desktop$ 
+

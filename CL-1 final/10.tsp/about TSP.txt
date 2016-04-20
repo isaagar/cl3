@@ -1,0 +1,41 @@
+Problem 
+-------------
+The travelling salesman problem (TSP) asks the following question: 
+
+Given a list of cities and the distances between each pair of cities, 
+what is the shortest possible route that visits each city exactly once 
+and returns to the origin city 
+
+It is an NP-hard problem in combinatorial optimization, that consists of 
+finding an optimal object from a finite set of objects.
+
+
+Alogrithm
+-----------
+The nearest neighbour algorithm was one of the first algorithms used to 
+determine a solution to the travelling salesman problem. 
+
+In it, the salesman starts at a random city and repeatedly visits the 
+nearest city until all have been visited. 
+It quickly yields a short tour, but usually a sub-optimal one.
+
+
+Below is the application of nearest neighbour algorithm on TSP
+
+Steps
+--------
+1) start on an arbitrary vertex as current vertex.
+2) find out the shortest edge connecting current vertex and an unvisited vertex V.
+3) set current vertex to V.
+4) mark V as visited.
+5) if all the vertices in domain are visited, then go to 7.
+6) Go to step 2.
+7) Go to home.
+
+The sequence of the visited vertices is the output of the algorithm.
+
+Known Issues
+--------------
+The nearest neighbour algorithm is easy to implement and executes quickly, 
+but it can sometimes miss shorter routes due to its "greedy" nature. 
+

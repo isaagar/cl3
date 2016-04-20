@@ -1,0 +1,12 @@
+7,7,bad
+7,4,bad
+7,6,bad
+6,7,bad
+6,6,bad
+4,4,good
+4,3,good
+2,3,good
+3,4,good
+1,4,good
+2,4,good
+

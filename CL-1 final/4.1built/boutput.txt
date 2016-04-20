@@ -1,0 +1,16 @@
+ccompl10-20@ccompl10-20:~/Desktop/built in funtion$ lex builtinfun.l 
+ccompl10-20@ccompl10-20:~/Desktop/built in funtion$ cc lex.yy.c
+ccompl10-20@ccompl10-20:~/Desktop/built in funtion$ ./a.out
+scanf() is a built in funtion()
+printf() is a built in funtion()
+4544 is digit
+5456 is digit
+mitcoe is an identifier
+strcmp() is a built in funtion 
+strcpy() is a built in funtion 
+getc() is a built in funtion
+
+ 
+
+ccompl10-20@ccompl10-20:~/Desktop/built in funtion$ 
+

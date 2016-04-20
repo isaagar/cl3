@@ -1,0 +1,9 @@
+ccompl10-20@ccompl10-20:~/Desktop/Average$ lex average.l
+ccompl10-20@ccompl10-20:~/Desktop/Average$ cc lex.yy.c
+ccompl10-20@ccompl10-20:~/Desktop/Average$ ./a.out
+
+
+
+Average is 20 
+ccompl10-20@ccompl10-20:~/Desktop/Average$ 
+
